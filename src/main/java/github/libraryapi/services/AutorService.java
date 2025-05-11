@@ -1,7 +1,7 @@
 package github.libraryapi.services;
 
-import github.libraryapi.Repository.AutorRepository;
-import github.libraryapi.Repository.LivroRepository;
+import github.libraryapi.repository.AutorRepository;
+import github.libraryapi.repository.LivroRepository;
 import github.libraryapi.entities.Autor;
 import github.libraryapi.exceptions.OperacaoNaoPermitidaException;
 import github.libraryapi.validators.AutorValidator;

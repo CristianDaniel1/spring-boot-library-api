@@ -1,6 +1,6 @@
 package github.libraryapi.mappers;
 
-import github.libraryapi.Repository.AutorRepository;
+import github.libraryapi.repository.AutorRepository;
 import github.libraryapi.dto.CadastroLivroDTO;
 import github.libraryapi.dto.ResultadoPesquisaLivroDTO;
 import github.libraryapi.entities.Livro;

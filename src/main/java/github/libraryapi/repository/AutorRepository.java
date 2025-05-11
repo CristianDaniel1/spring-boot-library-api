@@ -1,4 +1,4 @@
-package github.libraryapi.Repository;
+package github.libraryapi.repository;
 
 import github.libraryapi.entities.Autor;
 import org.springframework.data.jpa.repository.JpaRepository;

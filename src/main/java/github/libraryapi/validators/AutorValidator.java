@@ -1,6 +1,6 @@
 package github.libraryapi.validators;
 
-import github.libraryapi.Repository.AutorRepository;
+import github.libraryapi.repository.AutorRepository;
 import github.libraryapi.entities.Autor;
 import github.libraryapi.exceptions.RegistroDuplicadoException;
 import org.springframework.stereotype.Component;

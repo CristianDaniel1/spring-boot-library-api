@@ -1,6 +1,6 @@
 package github.libraryapi.services;
 
-import github.libraryapi.Repository.LivroRepository;
+import github.libraryapi.repository.LivroRepository;
 import github.libraryapi.entities.Livro;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
