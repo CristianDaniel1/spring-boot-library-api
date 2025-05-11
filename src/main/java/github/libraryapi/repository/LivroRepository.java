@@ -3,6 +3,8 @@ package github.libraryapi.repository;
 import github.libraryapi.entity.Autor;
 import github.libraryapi.entity.GeneroLivro;
 import github.libraryapi.entity.Livro;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.JpaSpecificationExecutor;
 import org.springframework.data.jpa.repository.Modifying;
@@ -13,15 +15,18 @@ import org.springframework.transaction.annotation.Transactional;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.List;
+import java.util.Optional;
 import java.util.UUID;
 
 public interface LivroRepository extends JpaRepository<Livro, UUID>, JpaSpecificationExecutor<Livro> {
+    Page<Livro> findByAutor(Autor autor, Pageable pageable);
+
     // Query Methods
     List<Livro> findByAutor(Autor autor);
 
     List<Livro> findByTitulo(String titulo);
 
-    List<Livro> findByIsbn(String isbn);
+    Optional<Livro> findByIsbn(String isbn);
 
     List<Livro> findByTituloAndPreco(String titulo, BigDecimal preco);
 

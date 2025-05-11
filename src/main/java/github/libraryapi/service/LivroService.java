@@ -1,14 +1,16 @@
 package github.libraryapi.service;
 
 import github.libraryapi.entity.GeneroLivro;
-import github.libraryapi.repository.LivroRepository;
 import github.libraryapi.entity.Livro;
-import github.libraryapi.repository.specs.LivroSpecs;
+import github.libraryapi.repository.LivroRepository;
+import github.libraryapi.validator.LivroValidator;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.domain.Specification;
 import org.springframework.stereotype.Service;
 
-import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 
@@ -18,8 +20,10 @@ import static github.libraryapi.repository.specs.LivroSpecs.*;
 @RequiredArgsConstructor
 public class LivroService {
     private final LivroRepository repository;
+    private final LivroValidator validator;
 
     public Livro salvar(Livro livro) {
+        validator.validar(livro);
         return repository.save(livro);
     }
 
@@ -31,8 +35,14 @@ public class LivroService {
         repository.delete(livro);
     }
 
-    public List<Livro> pesquisa(
-            String isbn, String titulo, String nomeAutor, GeneroLivro genero, Integer anoPublicacao) {
+    public Page<Livro> pesquisa(
+            String isbn,
+            String titulo,
+            String nomeAutor,
+            GeneroLivro genero,
+            Integer anoPublicacao,
+            Integer pagina,
+            Integer tamanhoPagina) {
 
 //        Specification<Livro> specs = Specification
 //                .where(LivroSpecs.isbnEqual(isbn))
@@ -57,7 +67,9 @@ public class LivroService {
         if (nomeAutor != null)
             specs = specs.and(nomeAutorLike(nomeAutor));
 
-        return repository.findAll(specs);
+        Pageable pageRequest = PageRequest.of(pagina, tamanhoPagina);
+
+        return repository.findAll(specs, pageRequest);
     }
 
     public void atualizar(Livro livro) {
@@ -65,6 +77,7 @@ public class LivroService {
             throw new IllegalArgumentException("Para atualizar, é necessário que o livro já esteja salvo na base.");
         }
 
+        validator.validar(livro);
         repository.save(livro);
     }
 }
