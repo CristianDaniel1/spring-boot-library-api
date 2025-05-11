@@ -3,7 +3,7 @@ package github.libraryapi.dto;
 import jakarta.validation.constraints.NotBlank;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Past;
-import github.libraryapi.entities.GeneroLivro;
+import github.libraryapi.entity.GeneroLivro;
 import org.hibernate.validator.constraints.ISBN;
 
 import java.math.BigDecimal;

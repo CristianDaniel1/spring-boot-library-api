@@ -1,7 +1,7 @@
-package github.libraryapi.mappers;
+package github.libraryapi.mapper;
 
 import github.libraryapi.dto.AutorDTO;
-import github.libraryapi.entities.Autor;
+import github.libraryapi.entity.Autor;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 

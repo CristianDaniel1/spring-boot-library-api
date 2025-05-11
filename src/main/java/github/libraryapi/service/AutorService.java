@@ -1,10 +1,10 @@
-package github.libraryapi.services;
+package github.libraryapi.service;
 
 import github.libraryapi.repository.AutorRepository;
 import github.libraryapi.repository.LivroRepository;
-import github.libraryapi.entities.Autor;
-import github.libraryapi.exceptions.OperacaoNaoPermitidaException;
-import github.libraryapi.validators.AutorValidator;
+import github.libraryapi.entity.Autor;
+import github.libraryapi.exception.OperacaoNaoPermitidaException;
+import github.libraryapi.validator.AutorValidator;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;

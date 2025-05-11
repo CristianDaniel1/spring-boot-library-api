@@ -1,9 +1,9 @@
-package github.libraryapi.mappers;
+package github.libraryapi.mapper;
 
 import github.libraryapi.repository.AutorRepository;
 import github.libraryapi.dto.CadastroLivroDTO;
 import github.libraryapi.dto.ResultadoPesquisaLivroDTO;
-import github.libraryapi.entities.Livro;
+import github.libraryapi.entity.Livro;
 import org.mapstruct.Mapper;
 import org.mapstruct.Mapping;
 import org.springframework.beans.factory.annotation.Autowired;

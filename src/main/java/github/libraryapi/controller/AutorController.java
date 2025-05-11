@@ -1,10 +1,10 @@
-package github.libraryapi.controllers;
+package github.libraryapi.controller;
 
 import jakarta.validation.Valid;
 import github.libraryapi.dto.AutorDTO;
-import github.libraryapi.entities.Autor;
-import github.libraryapi.mappers.AutorMapper;
-import github.libraryapi.services.AutorService;
+import github.libraryapi.entity.Autor;
+import github.libraryapi.mapper.AutorMapper;
+import github.libraryapi.service.AutorService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

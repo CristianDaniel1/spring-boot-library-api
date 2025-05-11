@@ -1,4 +1,4 @@
-package github.libraryapi.exceptions;
+package github.libraryapi.exception;
 
 public class RegistroDuplicadoException extends RuntimeException {
     public RegistroDuplicadoException(String message) {

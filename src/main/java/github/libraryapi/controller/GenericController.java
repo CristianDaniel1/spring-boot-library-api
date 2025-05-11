@@ -1,4 +1,4 @@
-package github.libraryapi.controllers;
+package github.libraryapi.controller;
 
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 

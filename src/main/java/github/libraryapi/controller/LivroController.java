@@ -1,11 +1,11 @@
-package github.libraryapi.controllers;
+package github.libraryapi.controller;
 
 import jakarta.validation.Valid;
 import github.libraryapi.dto.CadastroLivroDTO;
 import github.libraryapi.dto.ResultadoPesquisaLivroDTO;
-import github.libraryapi.entities.Livro;
-import github.libraryapi.mappers.LivroMapper;
-import github.libraryapi.services.LivroService;
+import github.libraryapi.entity.Livro;
+import github.libraryapi.mapper.LivroMapper;
+import github.libraryapi.service.LivroService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;

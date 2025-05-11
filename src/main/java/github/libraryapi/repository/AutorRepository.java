@@ -1,6 +1,6 @@
 package github.libraryapi.repository;
 
-import github.libraryapi.entities.Autor;
+import github.libraryapi.entity.Autor;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 import java.time.LocalDate;

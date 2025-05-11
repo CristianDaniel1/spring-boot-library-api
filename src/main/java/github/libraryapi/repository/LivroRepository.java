@@ -1,8 +1,8 @@
 package github.libraryapi.repository;
 
-import github.libraryapi.entities.Autor;
-import github.libraryapi.entities.GeneroLivro;
-import github.libraryapi.entities.Livro;
+import github.libraryapi.entity.Autor;
+import github.libraryapi.entity.GeneroLivro;
+import github.libraryapi.entity.Livro;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
 import org.springframework.data.jpa.repository.Query;

@@ -1,43 +1,47 @@
-package github.libraryapi.entities;
+package github.libraryapi.entity;
 
 import jakarta.persistence.*;
-import lombok.Getter;
-import lombok.Setter;
+import lombok.Data;
 import lombok.ToString;
 import org.springframework.data.annotation.CreatedDate;
 import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
-import java.util.List;
 import java.util.UUID;
 
 @Entity
-@Table(name = "autor", schema = "public")
-@Getter
-@Setter
-@ToString(exclude = "livros")
+@Table
+@Data
+@ToString(exclude = "autor")
 @EntityListeners(AuditingEntityListener.class)
-public class Autor {
-
+public class Livro {
     @Id
     @Column(name = "id")
     @GeneratedValue(strategy = GenerationType.UUID)
     private UUID id;
 
-    @Column(name = "nome", length = 100, nullable = false)
-    private String nome;
+    @Column(name = "isbn", length = 20, nullable = false)
+    private String isbn;
 
-    @Column(name = "data_nascimento", nullable = false)
-    private LocalDate dataNascimento;
+    @Column(name = "titulo", length = 150, nullable = false)
+    private String titulo;
 
-    @Column(name = "nacionalidade", length = 50, nullable = false)
-    private String nacionalidade;
+    @Column(name = "data_publicacao", nullable = false)
+    private LocalDate dataPublicacao;
 
-//    @Transient
-    @OneToMany(mappedBy = "autor", fetch = FetchType.LAZY)
-    private List<Livro> livros;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "genero", length = 30, nullable = false)
+    private GeneroLivro genero;
+
+    @Column(name = "preco", precision = 18, scale = 2)
+    private BigDecimal preco;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "id_autor")
+    private Autor autor;
 
     @CreatedDate
     @Column(name = "data_cadastro")
@@ -50,5 +54,5 @@ public class Autor {
     @Column(name = "id_usuario")
     private UUID idUsuario;
 
-    public Autor(){}
+    public Livro(){}
 }

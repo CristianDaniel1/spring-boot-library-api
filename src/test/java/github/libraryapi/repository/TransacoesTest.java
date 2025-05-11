@@ -1,6 +1,6 @@
 package github.libraryapi.repository;
 
-import github.libraryapi.services.TransacaoService;
+import github.libraryapi.service.TransacaoService;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

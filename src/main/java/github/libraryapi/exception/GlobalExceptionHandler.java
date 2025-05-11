@@ -1,4 +1,4 @@
-package github.libraryapi.exceptions;
+package github.libraryapi.exception;
 
 import github.libraryapi.dto.ErroCampo;
 import github.libraryapi.dto.ErroResposta;

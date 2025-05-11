@@ -1,10 +1,10 @@
-package github.libraryapi.services;
+package github.libraryapi.service;
 
 import github.libraryapi.repository.AutorRepository;
 import github.libraryapi.repository.LivroRepository;
-import github.libraryapi.entities.Autor;
-import github.libraryapi.entities.GeneroLivro;
-import github.libraryapi.entities.Livro;
+import github.libraryapi.entity.Autor;
+import github.libraryapi.entity.GeneroLivro;
+import github.libraryapi.entity.Livro;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

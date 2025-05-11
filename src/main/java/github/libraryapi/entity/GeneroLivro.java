@@ -1,4 +1,4 @@
-package github.libraryapi.entities;
+package github.libraryapi.entity;
 
 public enum GeneroLivro {
     FICCAO,

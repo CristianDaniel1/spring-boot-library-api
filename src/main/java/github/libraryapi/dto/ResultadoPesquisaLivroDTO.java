@@ -1,6 +1,6 @@
 package github.libraryapi.dto;
 
-import github.libraryapi.entities.GeneroLivro;
+import github.libraryapi.entity.GeneroLivro;
 
 import java.math.BigDecimal;
 import java.time.LocalDate;
